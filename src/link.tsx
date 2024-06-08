@@ -41,7 +41,7 @@ export function Link(props: React.ComponentProps<typeof NextLink>) {
   const router = useRouter();
   const finishViewTransition = useSetFinishViewTransition();
 
-  const { href, as, replace, scroll, shallow, className } = props;
+  const { href, as, replace, scroll, shallow, className, children } = props;
   const onClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
       if (props.onClick) {
@@ -76,12 +76,19 @@ export function Link(props: React.ComponentProps<typeof NextLink>) {
               });
             })
         );
+      } else if (shallow) {
+        e.preventDefault();
+        window.history[`${replace ? "replace" : "push"}State`](null, "", href);
       }
     },
     [props.onClick, href, as, replace, scroll]
   );
   if (shallow) {
-    return <a {...props} onClick={onClick} />;
+    return (
+      <a href={href} className={className} onClick={onClick}>
+        {children}
+      </a>
+    );
   }
   return <NextLink {...props} onClick={onClick} />;
 }

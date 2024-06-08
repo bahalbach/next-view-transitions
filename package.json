@@ -1,6 +1,6 @@
 {
-  "name": "next-view-transitions",
-  "version": "0.2.0",
+  "name": "@bahalbach/next-view-transitions",
+  "version": "0.3.0",
   "type": "module",
   "description": "View Transitions API for Next.js App Router",
   "main": "./dist/index.js",
@@ -20,11 +20,7 @@
     "route transitions",
     "app router"
   ],
-  "author": {
-    "name": "Shu Ding",
-    "email": "g@shud.in",
-    "url": "https://shud.in"
-  },
+  "author": "Shu Ding <g@shud.in> (https://shud.in)",
   "homepage": "https://next-view-transitions.vercel.app",
   "license": "MIT",
   "devDependencies": {
@@ -40,5 +36,15 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "packageManager": "pnpm@9.1.4"
+  "packageManager": "pnpm@9.1.4",
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahalbach/next-view-transitions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bahalbach/next-view-transitions/issues"
+  }
 }
